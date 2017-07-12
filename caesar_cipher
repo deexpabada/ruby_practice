@@ -1,0 +1,26 @@
+def caesar_cipher(sentence, shift)
+  alphabet = ("a".."z").to_a
+  characters = sentence.split("")
+  caesar = []
+
+  characters.each {|character|
+    if alphabet.include?(character.downcase)
+      if (alphabet.index(character.downcase)) + shift <= 25
+        newChar = alphabet[(alphabet.index(character.downcase)) + shift]
+      else
+        newChar = alphabet[(alphabet.index(character.downcase)) - alphabet.length + positions]
+      end
+    else
+      newChar = character
+    end
+
+    if character != character.downcase
+      caesar.push(newChar.upcase)
+    else
+      caesar.push(newChar)
+    end
+  }
+  puts caesar.join()
+end
+
+caesar_cipher("this is a sentence", 3)
